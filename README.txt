@@ -1,3 +1,3 @@
 # Tak to je hodne benžr
 
-tohle je benžr
+tohle je hodně benžr
