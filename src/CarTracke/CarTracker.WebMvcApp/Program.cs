@@ -1,3 +1,6 @@
+using CarTracker.WebMvcApp.Contexts;
+using CarTracker.WebMvcApp.Entities;
+
 namespace CarTracker.WebMvcApp
 {
     public class Program
@@ -29,6 +32,17 @@ namespace CarTracker.WebMvcApp
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}")
                 .WithStaticAssets();
+
+            //AppDbContext appDbContext = new AppDbContext();
+
+            //List<Car> cars = new List<Car>();
+            //List<User> users = new List<User>();
+
+            //cars = appDbContext.Car.ToList();
+            //users = appDbContext.User.ToList();
+
+            //Console.WriteLine();
+
 
             app.Run();
         }
