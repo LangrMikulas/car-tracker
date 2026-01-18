@@ -11,20 +11,22 @@ namespace CarTracker.WebMvcApp.Controllers
     public class UsersController : Controller
     {
         public AppDbContext AppDbContext { get; set; }
-        public List<Car> Cars{ get; set; }
+        //public List<Car> Cars{ get; set; }
         public List<User> Users { get; set; }
 
         public UsersController()
         {
             AppDbContext = new AppDbContext();
-            Cars = AppDbContext.Car.ToList();
+            //Cars = AppDbContext.Car.ToList();
             Users = AppDbContext.User.ToList();
         }
 
-        public IActionResult All()
+        public IActionResult ShowUsers()
         {
-            ZasilkovnaDataViewModel model = new ZasilkovnaDataViewModel(Cars, Users);
-            return View(model);
+            var users = AppDbContext.User
+                        .Include(u => u.FavouriteCar)
+                        .ToList();
+            return View(Users);
         }
     }
 }
