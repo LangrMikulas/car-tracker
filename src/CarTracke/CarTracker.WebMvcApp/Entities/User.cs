@@ -9,11 +9,14 @@ namespace CarTracker.WebMvcApp.Entities
         [Key]
         [Column("id")]
         public int Id { get; set;}
+
         [Column("favourite_car")]
-        [ForeignKey("pepa")]
-        public Car FavouriteCar { get; set; }
+        [ForeignKey("FavouriteCarId")]
+        public int FavouriteCar { get; set; }
+
         [Column("first_name")]
         public string FirstName { get; set; }
+
         [Column("last_name")]
         public string LastName { get; set; }
 
