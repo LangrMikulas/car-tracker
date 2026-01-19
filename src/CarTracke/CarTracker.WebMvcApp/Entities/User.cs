@@ -11,8 +11,8 @@ namespace CarTracker.WebMvcApp.Entities
         public int Id { get; set;}
 
         [Column("favourite_car")]
-        [ForeignKey("FavouriteCarId")]
-        public int FavouriteCar { get; set; }
+        [ForeignKey("favourite_car")]
+        public Car FavouriteCar { get; set; }
 
         [Column("first_name")]
         public string FirstName { get; set; }

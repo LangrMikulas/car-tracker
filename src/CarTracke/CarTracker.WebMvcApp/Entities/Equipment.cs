@@ -19,7 +19,7 @@ namespace CarTracker.WebMvcApp.Entities
         [Column("brand")]
         public string Brand { get; set; }
 
-        [Column("is_table")]
-        public bool IsTable { get; set; }
+        [Column("refillable")]
+        public bool Refillable { get; set; }
     }
 }
