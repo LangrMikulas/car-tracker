@@ -12,6 +12,5 @@ namespace CarTracker.WebMvcApp.Contexts
         {
             optionsBuilder.UseMySQL("Server=mysqlstudenti.litv.sssvt.cz;Database=4c1_langrmikulas_db2;Uid=langrmikulas;Pwd=123456;");
         }
-
     }
 }
