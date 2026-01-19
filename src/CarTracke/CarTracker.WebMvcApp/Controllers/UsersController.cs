@@ -18,7 +18,7 @@ namespace CarTracker.WebMvcApp.Controllers
         {
             AppDbContext = new AppDbContext();
             Cars = AppDbContext.Car.ToList();
-            Users = AppDbContext.User.ToList();
+            Users = AppDbContext.User.Include(u => u.FavouriteCar).ToList();
         }
 
         public IActionResult All()
