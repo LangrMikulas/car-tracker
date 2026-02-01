@@ -1,3 +1,4 @@
+/*
 html {
   font-size: 14px;
 }
@@ -28,4 +29,150 @@ body {
 
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
+}
+    */
+
+body {
+    font-family: "Funnel Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+body {
+    min-height: 100vh;
+    color: white;
+    background-image: url("./body_background.jpg");
+    background-size: cover;
+    background-color: (255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+}
+
+
+
+nav {
+    backdrop-filter: blur(100px);
+    background-color: rgb(0, 49, 108, 0,30);
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+a, .a-logs {
+    text-decoration: none;
+    color: white;
+}
+
+    a:visited {
+        color: white;
+    }
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.navigation-list,
+.header-links-container {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+}
+
+.header-links-container {
+    width: 50%;
+}
+
+.registration-login-container {
+    display: flex;
+    gap: 10px;
+    flex: 1;
+    justify-content: flex-end;
+    margin-right: 10px;
+}
+
+.registration-login-container .navigation-item {
+    background-color: grey;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+}
+
+.navigation-item {
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation-item:hover {
+    color: gray;
+}
+
+.registration-login-container .navigation-item:hover {
+    color: black;
+}
+
+
+
+
+
+/* USERS */
+
+table {
+    border: 1px  rgb(50, 50, 50);
+    border-radius: 5px;
+    border-collapse: collapse;
+    overflow: hidden;
+}
+
+td {
+    border: 1px solid rgb(50, 50, 50);
+    box-sizing: border-box;
+    border-radius: inherit;
+    width: 150px;
+}
+
+thead td {
+    text-align: center;
+    background-color: rgba(0, 0, 255, 0.25);
+    backdrop-filter: blur(50px);
+}
+
+
+/* LOGIN + REGISTRATION */
+
+input {
+    padding: 5px;
+}
+
+.input {
+    background-color: lightgray;
+    width: 500px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.input-button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
 }

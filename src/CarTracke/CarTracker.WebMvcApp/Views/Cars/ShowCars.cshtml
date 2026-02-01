@@ -1,19 +1,8 @@
 ﻿@using CarTracker.WebMvcApp.ViewModels
 @model IEnumerable<CarTracker.WebMvcApp.Entities.Car>
 
-<style>
-    td {
-        border: 1px solid black;
-        width: 150px;
-    }
-
-    thead td {
-        background-color: aquamarine;
-    } 
-</style>
-
 <h1>Cars</h1>
-<table style="border: 1px solid black; border-collapse: collapse ">
+<table>
     <thead>
         <tr>
             <td>Id</td>
@@ -28,17 +17,17 @@
     </thead>
     <tbody>
 
-        @foreach (var users in Model)
+        @foreach (var cars in Model)
         {
             <tr>
-                <td>@users.Id</td>
-                <td>@users.Model</td>
-                <td>@users.Nickname</td>
-                <td>@users.Color</td>
-                <td>@users.Brand</td>
-                <td>@users.BoughtTime</td>
-                <td>@users.FuelType</td>
-                <td>@users.Owner</td>
+                <td>@cars.Id</td>
+                <td>@cars.Model</td>
+                <td>@cars.Nickname</td>
+                <td>@cars.Color</td>
+                <td>@cars.Brand</td>
+                <td>@cars.BoughtTime</td>
+                <td>@cars.FuelType</td>
+                <td>@cars.Owner</td>
             </tr>	
         }
     </tbody>
