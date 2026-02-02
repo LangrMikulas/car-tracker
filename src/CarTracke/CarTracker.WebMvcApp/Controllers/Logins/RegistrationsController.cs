@@ -2,6 +2,7 @@
 using CarTracker.WebMvcApp.Entities;
 using CarTracker.WebMvcApp.Entities.Logins;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace CarTracker.WebMvcApp.Controllers.Logins
 {
@@ -15,9 +16,12 @@ namespace CarTracker.WebMvcApp.Controllers.Logins
         {
             AppDbContext = new AppDbContext();
             Registrations = AppDbContext.Registration.ToList();
+            cars = AppDbContext.Car.ToList();
         }
         public IActionResult Registration()
         {
+            var cars = AppDbContext.Car.ToList();
+
             return View("~/Views/Logins/Registration.cshtml", cars);
         }
     }

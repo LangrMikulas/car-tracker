@@ -3,11 +3,13 @@ using System.Xml;
 using CarTracker.WebMvcApp.Contexts;
 using CarTracker.WebMvcApp.Entities;
 using CarTracker.WebMvcApp.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace CarTracker.WebMvcApp.Controllers
 {
+    [Authorize]
     public class UsersController : Controller
     {
         public AppDbContext AppDbContext { get; set; }

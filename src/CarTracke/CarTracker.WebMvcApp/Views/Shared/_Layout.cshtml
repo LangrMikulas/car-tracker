@@ -69,14 +69,24 @@
                         <div class="a-logs">Logs</div>
                         </div>
                 </div>
-                <div class="registration-login-container" id="registration-login">
-                    <div class="navigation-item">
-                        <a class="nav-link" asp-area="" asp-controller="Logins" asp-action="Login">Login</a>
+                @if(!User.Identity.IsAuthenticated)
+                {
+                    <div class="registration-login-container" id="registration-login">
+                        <div class="navigation-item">
+                            <a class="nav-link" asp-area="" asp-controller="Logins" asp-action="Login">Login</a>
+                        </div>
+                        <div class="navigation-item">
+                            <a class="nav-link" asp-area="" asp-controller="Registrations" asp-action="Registration">Register</a>
+                        </div>  
                     </div>
-                    <div class="navigation-item">
-                        <a class="nav-link" asp-area="" asp-controller="Registrations" asp-action="Registration">Register</a>
-                    </div>
-                </div>
+                }
+                else
+                {
+                    <div class="registration-login-container">
+                        @User.FindFirst("username").Value
+                    </div>    
+                }
+            </div>
         </nav>
     </header>
 

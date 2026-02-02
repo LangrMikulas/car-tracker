@@ -1,5 +1,6 @@
 using CarTracker.WebMvcApp.Contexts;
 using CarTracker.WebMvcApp.Entities;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace CarTracker.WebMvcApp
 {
@@ -9,8 +10,21 @@ namespace CarTracker.WebMvcApp
         {
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddControllersWithViews();
+                // 1. èást - konfigurace cookies
+            builder.Services
+                .AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)   //konfigurace autentikace
+                .AddCookie(options =>
+                {
+                    options.LoginPath = "/Logins/Login";
+                    //options.LogoutPath = "/Logins/Logout";
+                    //options.AccessDeniedPath = "/Logins/Denied";
+
+                    options.Cookie.HttpOnly = true;
+                    options.Cookie.SameSite = SameSiteMode.Lax;
+                });
 
             var app = builder.Build();
+
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
@@ -20,7 +34,9 @@ namespace CarTracker.WebMvcApp
             app.UseHttpsRedirection();
             app.UseRouting();
 
-            app.UseAuthorization();
+            // dùležité poøadí!!: 
+            app.UseAuthentication();    // zapnutí autentizace, pokazde zkontroluje, zda jsem prihlasen a pravidla pro autorizaci //kdo jsme
+            app.UseAuthorization();     // jaké role máme
 
             app.MapStaticAssets();
             app.MapControllerRoute(
