@@ -1,0 +1,63 @@
+body {
+    font-family: "Funnel Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: aqua;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+}
+
+
+.navigation-list,
+.header-links-container {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+}
+
+.header-links-container {
+    width: 50%;
+}
+
+.registration-login-container {
+    display: flex;
+    gap: 10px;
+    flex: 1;
+    justify-content: flex-end;
+    margin-right: 10px;
+}
+
+.registration-login-container .navigation-item {
+    background-color: grey;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+
+}
+
+.navigation-item {
+    cursor: pointer;
+    user-select: none;
+}
+
+.navigation-item:hover {
+    color: gray;
+}
+
+.registration-login-container .navigation-item:hover {
+    color: black;
+}

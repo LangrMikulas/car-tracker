@@ -9,20 +9,26 @@ namespace CarTracker.WebMvcApp.Entities
         [Key]
         [Column("id")]
         public int Id { get; set; }
+
         [Column("model")]
         public string Model { get; set; }
+
         [Column("nickname")]
         public string Nickname { get; set; }
-        [Column("owner_id")]
-        public int Owner { get; set; }
+
         [Column("color")]
         public string Color { get; set; }
+
         [Column("brand")]
         public string Brand { get; set; }
-        [Column("fuel_type")]
-        public int FuelType { get; set; }
+
         [Column("bought_date")]
         public DateTime BoughtTime { get; set; }
 
+        [Column("fuel_type")]
+        public int FuelType { get; set; }
+
+        [Column("owner_username")]
+        public int Owner { get; set; }
     }
 }

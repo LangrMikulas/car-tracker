@@ -1,12 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <!--     <style>
+        .input {
+            background-color: gray;
+            width: 500px;
+        }
+    </style>
+
+    <style>
+        .registration-login {
+            border-radius: 10px;
+            background-color: rgba(251, 251, 251, 0.048);
+        }
+    </style> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
-    <button>Logs</button>
-    <div></div>
+    <!--     <button>Logs</button>
+    <div></div> -->
+
+    <!-- 
+    <h1>Přihlášení</h1>
+    <form action="">
+        <input type="text" id="username" class="input" />
+        <input type="text" id="password" class="input" />
+
+        <button id="login" class="input-button">Přihlásit se</button>
+    </form>
+
+    <h1>Registrace</h1>
+    <form action="">
+        <input type="text" id="favourite-car" class="input">
+        <input type="text" id="first-name" class="input">
+        <input type="text" id="last-name" class="input">
+        <input type="text" id="username" class="input" />
+        <input type="text" id="password" class="input" />
+
+        <button id="login" class="input-button">Přihlásit se</button>
+    </form>
+
+
+
+
+    <ul>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="" asp-action=""></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="" asp-action=""></a>
+        </li>
+    </ul>
+ -->
+
+    <nav>
+        <div class="navigation-list">
+            <div class="header-links-container">
+                <div class="navigation-item">
+                    <a class="navigation-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                </div>
+                <div class="navigation-item">
+                    <a class="nav-link" asp-area="" asp-controller="Users" asp-action="ShowUsers">Users</a>
+                </div>
+                <div class="navigation-item">
+                    <a class="nav-link" asp-area="" asp-controller="Cars" asp-action="ShowCars">Cars</a>
+                </div>
+                <div class="navigation-item">Logs</div>
+            </div>
+            <div class="registration-login-container" id="registration-login">
+                <div class="navigation-item">
+                    <a class="nav-link" asp-area="" asp-controller="Logins" asp-action="Login">Login</a>
+                </div>
+                <div class="navigation-item">
+                    <a class="nav-link" asp-area="" asp-controller="Registrations"
+                        asp-action="Registration">Register</a>
+                    </li>
+                </div>
+            </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+
 </body>
+
 </html>

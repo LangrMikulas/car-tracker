@@ -1,0 +1,35 @@
+﻿@using CarTracker.WebMvcApp.ViewModels
+@model IEnumerable<CarTracker.WebMvcApp.Entities.Car>
+
+<style>
+    .input {
+        background-color: gray;
+        width: 500px;
+    }
+</style>
+
+
+<h1>Registrace</h1>
+<form asp-action="">
+    <input type="text" id="first-name" placeholder="křestní jméno" class="input"/>
+    <input type="text" id="last-name" placeholder="příjmení" class="input"/>
+    <input type="text" id="username" placeholder="uživatelské jméno" class="input" />
+    <input type="password" id="password" placeholder="heslo" class="input" />
+    <select class="input">
+        @foreach (var cars in Model)
+        {
+            <option>
+                <td>@cars.Id</td>
+                <td>@cars.Model</td>
+                <td>@cars.Nickname</td>
+                <td>@cars.Color</td>
+                <td>@cars.Brand</td>
+                <td>@cars.BoughtTime</td>
+                <td>@cars.FuelType</td>
+                <td>@cars.Owner</td>
+            </option>
+        }
+    </select>
+
+    <button id="login" class="input-button">Přihlásit se</button>
+</form>

@@ -1,18 +1,8 @@
 ﻿@using CarTracker.WebMvcApp.ViewModels
 @model IEnumerable<CarTracker.WebMvcApp.Entities.User>
-<style>
-    td {
-        border: 1px solid black;
-        width: 150px;
-    }
-
-    thead td {
-        background-color: aquamarine;
-    } 
-</style>
 
 <h1>Users</h1>
-<table style="border: 1px solid black; border-collapse: collapse ">
+<table>
     <thead>
         <tr>
             <td>Id</td>
@@ -26,7 +16,7 @@
         @foreach (var users in Model)
         {
             <tr>
-                <td>@users.Id</td>
+                <td>@users.Username</td>
                 <td>@users.FirstName</td>
                 <td>@users.LastName</td>
                 <td>

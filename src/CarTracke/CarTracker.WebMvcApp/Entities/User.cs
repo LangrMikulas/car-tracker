@@ -7,8 +7,11 @@ namespace CarTracker.WebMvcApp.Entities
     public class User
     {
         [Key]
-        [Column("id")]
-        public int Id { get; set;}
+        [Column("username")]
+        public string Username { get; set;}
+
+        [Column("password_hash")]
+        public string PasswordHash { get; set; }
 
         [Column("favourite_car")]
         [ForeignKey("favourite_car")]
@@ -21,6 +24,8 @@ namespace CarTracker.WebMvcApp.Entities
         public string LastName { get; set; }
 
         
+
+
 
     }
 }
