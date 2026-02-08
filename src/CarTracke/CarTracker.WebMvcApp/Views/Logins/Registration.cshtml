@@ -1,5 +1,6 @@
 ﻿@using CarTracker.WebMvcApp.ViewModels
-@model IEnumerable<CarTracker.WebMvcApp.Entities.Car>
+@model RegistrationViewModel
+
 
 <style>
     .input {
@@ -10,26 +11,26 @@
 
 
 <h1>Registrace</h1>
-<form asp-action="">
-    <input type="text" id="first-name" placeholder="křestní jméno" class="input"/>
-    <input type="text" id="last-name" placeholder="příjmení" class="input"/>
-    <input type="text" id="username" placeholder="uživatelské jméno" class="input" />
-    <input type="password" id="password" placeholder="heslo" class="input" />
+<form asp-action="RegisterUser" method="post">
+    @* <label></label> *@
+    <input asp-for="FirstName" type="text" id="first-name" placeholder="křestní jméno" class="input"/>
+    <input asp-for="LastName" type="text" id="last-name" placeholder="příjmení" class="input"/>
+    <input asp-for="Username" type="text" id="username" placeholder="uživatelské jméno" class="input" />
+    <input asp-for="Password" type="password" id="password" placeholder="heslo" class="input" />
     <select class="input">
-        @foreach (var cars in Model)
+        <option>
+            ** Vyber své oblíbené auto **
+        </option>
+        @foreach (var cars in Model.AvailableCars)
         {
             <option>
-                <td>@cars.Id</td>
+                <td>@cars.Brand</td>
                 <td>@cars.Model</td>
                 <td>@cars.Nickname</td>
-                <td>@cars.Color</td>
-                <td>@cars.Brand</td>
-                <td>@cars.BoughtTime</td>
-                <td>@cars.FuelType</td>
-                <td>@cars.Owner</td>
+                
             </option>
         }
     </select>
 
-    <button id="login" class="input-button">Přihlásit se</button>
+    <button id="register" type="submit" class="input-button">Zaregistrovat se</button>
 </form>

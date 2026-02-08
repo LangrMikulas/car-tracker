@@ -1,11 +1,23 @@
-﻿@* @model LoginViewModel(); *@
+﻿@using CarTracker.WebMvcApp.ViewModels
+@model LoginViewModel
 
-<form id="signin-form" asp-action="none">
+<form asp-action="Login" method="post">
     <h1>Přihlášení</h1>
     <div class="container">
-        <input type="text" name="username" id="username" placeholder="username" class="input" />
-        <input type="password" name="password" id="password" placeholder="password" class="input" />
+        <div>
+            <label asp-for="Username" class="form-label">Uživatelské jméno</label>
+            <input asp-for="Username" placeholder="username" class="input" />
+            <span asp-validation-for="Username" class="text-danger"></span>
+        </div>
 
-        <button id="login-button" class="input-button" asp-action="Login" asp-controller="Login">Přihlásit se</button>
+        <div>
+            <label asp-for="Password" class="form-label">Heslo</label>
+            <input asp-for="Password" placeholder="password" class="input" type="password" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        @* <button id="login-button" class="input-button" asp-action="Login" asp-controller="Login">Přihlásit se</button> *@
+
+        <button type="submit" class="input-button">Přihlásit se</button>
     </div>
 </form>

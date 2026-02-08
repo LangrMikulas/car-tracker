@@ -10,7 +10,8 @@ namespace CarTracker.WebMvcApp
         {
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddControllersWithViews();
-                // 1. θαst - konfigurace cookies
+            builder.Services.AddDbContext<CarTracker.WebMvcApp.Contexts.AppDbContext>();
+            // 1. θαst - konfigurace cookies
             builder.Services
                 .AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)   //konfigurace autentikace
                 .AddCookie(options =>
@@ -18,6 +19,7 @@ namespace CarTracker.WebMvcApp
                     options.LoginPath = "/Logins/Login";
                     //options.LogoutPath = "/Logins/Logout";
                     //options.AccessDeniedPath = "/Logins/Denied";
+                    options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
 
                     options.Cookie.HttpOnly = true;
                     options.Cookie.SameSite = SameSiteMode.Lax;

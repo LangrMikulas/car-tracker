@@ -29,6 +29,6 @@ namespace CarTracker.WebMvcApp.Entities
         public int FuelType { get; set; }
 
         [Column("owner_username")]
-        public int Owner { get; set; }
+        public string OwnerUsername { get; set; }
     }
 }

@@ -67,7 +67,9 @@
                     </div>
                     <div class="navigation-item">
                         <div class="a-logs">Logs</div>
-                        </div>
+                    </div>
+                    
+
                 </div>
                 @if(!User.Identity.IsAuthenticated)
                 {
@@ -84,8 +86,13 @@
                 {
                     <div class="registration-login-container">
                         @User.FindFirst("username").Value
-                    </div>    
+                    </div>
+                    <div class="navigation-item">
+                        <a class="nav-link" asp-area="" asp-controller="Logins" asp-action="Logout">Logout</a>
+
+                    </div>
                 }
+            
             </div>
         </nav>
     </header>
