@@ -66,7 +66,7 @@
                         <a class="nav-link" asp-area="" asp-controller="Cars" asp-action="ShowCars">Cars</a>
                     </div>
                     <div class="navigation-item">
-                        <div class="a-logs">Logs</div>
+                        <a class="nav-link" asp-area="" asp-controller="" asp-action="">Logs</a>
                     </div>
                     
 
@@ -74,12 +74,16 @@
                 @if(!User.Identity.IsAuthenticated)
                 {
                     <div class="registration-login-container" id="registration-login">
-                        <div class="navigation-item">
-                            <a class="nav-link" asp-area="" asp-controller="Logins" asp-action="Login">Login</a>
-                        </div>
-                        <div class="navigation-item">
-                            <a class="nav-link" asp-area="" asp-controller="Registrations" asp-action="Registration">Register</a>
-                        </div>  
+                        <a class="nav-link" asp-area="" asp-controller="Logins" asp-action="Login">
+                            <div class="navigation-item">
+                                Login
+                            </div>
+                        </a>
+                        <a class="nav-link" asp-area="" asp-controller="Registrations" asp-action="Registration">
+                            <div class="navigation-item">
+                                Register
+                            </div>  
+                        </a>
                     </div>
                 }
                 else

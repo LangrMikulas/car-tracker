@@ -16,9 +16,9 @@ namespace CarTracker.WebMvcApp.Controllers
         //public List<Car> Cars{ get; set; }
         public List<User> Users { get; set; }
 
-        public UsersController()
+        public UsersController(AppDbContext context)
         {
-            AppDbContext = new AppDbContext();
+            AppDbContext = context;
             //Cars = AppDbContext.Car.ToList();
             Users = AppDbContext.User.ToList();
         }

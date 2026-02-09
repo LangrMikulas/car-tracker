@@ -1,5 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 
 namespace CarTracker.WebMvcApp.Entities
@@ -8,17 +10,23 @@ namespace CarTracker.WebMvcApp.Entities
     public class User
     {
         [Key]
+        [Required]
         [Column("username")]
         public string Username { get; set;}
+        
+        [Column("admin")]
+        [Required]
+        public bool IsAdmin { get; set; }
 
         [Required]
         [Column("password_hash")]
         public string PasswordHash { get; set; }
 
-        [Required]
+        [AllowNull]
         [Column("favourite_car")]
-        public int FavouriteCarId { get; set; }
+        public int? FavouriteCarId { get; set; }
 
+        [AllowNull]
         [ForeignKey("FavouriteCarId")]
         public virtual Car? FavouriteCar { get; set; }
 

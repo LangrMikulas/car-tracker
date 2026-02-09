@@ -50,6 +50,7 @@ namespace CarTracker.WebMvcApp.Controllers.Logins
 
 
             Claim usernameClaim = new Claim("username", user.Username);
+            Claim adminClaim = new Claim("admin", user.IsAdmin);
             //Claim firstNameClaim = new Claim("first_name", user.FirstName);
             //Claim lastNameClaim = new Claim("last_name", user.LastName);
 

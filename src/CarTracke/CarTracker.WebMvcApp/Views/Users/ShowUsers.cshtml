@@ -8,7 +8,8 @@
             <td>Id</td>
             <td>Jméno</td>
             <td>Příjmení</td>
-            <td>Oblíbené auto</td>
+            @* <td>Oblíbené auto</td> *@
+            <td>Akce</td>
         </tr>
     </thead>
     <tbody>
@@ -17,17 +18,26 @@
         {
             <tr>
                 <td>@users.Username</td>
-                @* <td>@users.FirstName</td>
-                <td>@users.LastName</td> *@
+                <td>@users.FirstName</td>
+                <td>@users.LastName</td>
                 <td>
-                    @if (users.FavouriteCar != null)
+                    @* @if (users.FavouriteCar != null)
                     {
                         @($"{users.FavouriteCar.Brand} { users.FavouriteCar.Model}")
                     }
                     else
                     {
                         <span>---</span>
+                    } *@
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <a asp-area="" class="action" asp-controller="" asp-action="Edit">Upravit</a>
+                        <a asp-area="" class="action" asp-controller="" asp-action="Delete">Smazat</a>
+                        
                     }
+
+
                 </td>
             </tr>	
         }

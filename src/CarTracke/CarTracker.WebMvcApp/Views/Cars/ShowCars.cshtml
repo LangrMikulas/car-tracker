@@ -13,6 +13,7 @@
             <td>Bought Time</td>
             <td>Fuel Type</td>
             <td>Owner</td>
+            <td>Akce</td>
         </tr>
     </thead>
     <tbody>
@@ -28,6 +29,14 @@
                 <td>@cars.BoughtTime</td>
                 <td>@cars.FuelType</td>
                 <td>@cars.OwnerUsername</td>
+                <td>
+                    @* @if (User.IsInRole(Admin))
+                    {
+                        <a asp-area="" class="action" asp-controller="" asp-action="Edit">Upravit</a>
+                        <a asp-area="" class="action" asp-controller="" asp-action="Delete">Smazat</a>
+
+                    } *@
+                </td>
             </tr>	
         }
     </tbody>

@@ -48,7 +48,7 @@ namespace CarTracker.WebMvcApp.Controllers.Logins
             AppDbContext.SaveChanges();
 
             
-            return RedirectToAction("Login", "~/Logins/LoginsController"); //pomoc
+            return RedirectToAction("Login", "Logins"); 
         }
 
     }
